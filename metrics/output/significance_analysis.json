@@ -1,0 +1,4081 @@
+{
+  "analysis": "paired bootstrap CIs and Wilcoxon tests for ranking comparisons",
+  "source_file": "metrics/output/ground_truth_results.json",
+  "source_timestamp": "2025-11-08T23:39:04.363191",
+  "n_queries": 100,
+  "miss_rank_rule": "assign rank K+1 to a target not retrieved within the top K",
+  "bootstrap": {
+    "method": "paired percentile bootstrap resampling the same query indices for both methods",
+    "resamples": 10000,
+    "confidence_level": 0.95,
+    "seed": 42,
+    "percentile_method": "NumPy linear quantile",
+    "rng": "numpy.random.default_rng",
+    "rng_call_order": "baseline, cutoff, then MRR, hit rate, and all-query mean rank"
+  },
+  "wilcoxon_test": {
+    "statistic": "two-sided paired Wilcoxon signed-rank test on per-query reciprocal ranks",
+    "approximation": "normal approximation with tie correction and no continuity correction",
+    "zero_differences": "omitted"
+  },
+  "per_query": [
+    {
+      "query_index_1_based": 1,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 2,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 3,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 4,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 5,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 6,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 7,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 8,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.0625,
+            "all_query_mean_rank": 16.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 9,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 10,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 11,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 12,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 13,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 14,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 15,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 16,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.06666666666666667,
+            "all_query_mean_rank": 15.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 17,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 18,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.0625,
+            "all_query_mean_rank": 16.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 19,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.05,
+            "all_query_mean_rank": 20.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 20,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 21,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 22,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 23,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 24,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.07692307692307693,
+            "all_query_mean_rank": 13.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 25,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.05263157894736842,
+            "all_query_mean_rank": 19.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 26,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 27,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 28,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 29,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 30,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 31,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 32,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 33,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 34,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 35,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 36,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 37,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 38,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 39,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 40,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 41,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 42,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 43,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 44,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 45,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.05,
+            "all_query_mean_rank": 20.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 46,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.05263157894736842,
+            "all_query_mean_rank": 19.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 47,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 48,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.05555555555555555,
+            "all_query_mean_rank": 18.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 49,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 50,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 51,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 52,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 53,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 54,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.05,
+            "all_query_mean_rank": 20.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 55,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.0625,
+            "all_query_mean_rank": 16.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 56,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 57,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 58,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 59,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 60,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 61,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 62,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 63,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 64,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 65,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 66,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 67,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 68,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 69,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 70,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 71,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 72,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.14285714285714285,
+            "all_query_mean_rank": 7.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 73,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 74,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 75,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 76,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 77,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 78,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.07692307692307693,
+            "all_query_mean_rank": 13.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 79,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 80,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.08333333333333333,
+            "all_query_mean_rank": 12.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 81,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.05,
+            "all_query_mean_rank": 20.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 82,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 83,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 84,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 85,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.1,
+            "all_query_mean_rank": 10.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.1111111111111111,
+            "all_query_mean_rank": 9.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 86,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.05,
+            "all_query_mean_rank": 20.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 87,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 88,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.05263157894736842,
+            "all_query_mean_rank": 19.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.05263157894736842,
+            "all_query_mean_rank": 19.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.05263157894736842,
+            "all_query_mean_rank": 19.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 89,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 90,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.2,
+            "all_query_mean_rank": 5.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 91,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 92,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 93,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.125,
+            "all_query_mean_rank": 8.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.25,
+            "all_query_mean_rank": 4.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.09090909090909091,
+            "all_query_mean_rank": 11.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 94,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.07142857142857142,
+            "all_query_mean_rank": 14.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 95,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.3333333333333333,
+            "all_query_mean_rank": 3.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 96,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.07692307692307693,
+            "all_query_mean_rank": 13.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 0.16666666666666666,
+            "all_query_mean_rank": 6.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 97,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.5,
+            "all_query_mean_rank": 2.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 98,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 99,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          },
+          "bert": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 11.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 0.0625,
+            "all_query_mean_rank": 16.0
+          },
+          "tfidf": {
+            "hit_rate": 0.0,
+            "mrr": 0.0,
+            "all_query_mean_rank": 21.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 0.058823529411764705,
+            "all_query_mean_rank": 17.0
+          }
+        }
+      }
+    },
+    {
+      "query_index_1_based": 100,
+      "cutoffs": {
+        "top_10": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        },
+        "top_20": {
+          "hybrid": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "tfidf": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          },
+          "bert": {
+            "hit_rate": 1.0,
+            "mrr": 1.0,
+            "all_query_mean_rank": 1.0
+          }
+        }
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "cutoff": 10,
+      "baseline": "tfidf",
+      "metrics": {
+        "mrr": {
+          "hybrid_mean": 0.38189285714285715,
+          "baseline_mean": 0.3093571428571429,
+          "mean_difference_hybrid_minus_baseline": 0.07253571428571429,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.008824206349206346,
+            0.1367773809523809
+          ],
+          "paired_wilcoxon_signed_rank": {
+            "n_nonzero_pairs": 59,
+            "w_positive": 1156.5,
+            "z_score": 2.050816871018826,
+            "p_value_two_sided": 0.040284783954767096
+          }
+        },
+        "hit_rate": {
+          "hybrid_mean": 0.7,
+          "baseline_mean": 0.61,
+          "mean_difference_hybrid_minus_baseline": 0.09,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            -0.01,
+            0.19
+          ]
+        },
+        "all_query_mean_rank": {
+          "hybrid_mean": 5.72,
+          "baseline_mean": 6.45,
+          "mean_difference_hybrid_minus_baseline": -0.73,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            -1.56,
+            0.11
+          ]
+        }
+      }
+    },
+    {
+      "cutoff": 20,
+      "baseline": "tfidf",
+      "metrics": {
+        "mrr": {
+          "hybrid_mean": 0.3932235839925468,
+          "baseline_mean": 0.31784080174211754,
+          "mean_difference_hybrid_minus_baseline": 0.07538278225042931,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.01464929058944152,
+            0.1363817113946854
+          ],
+          "paired_wilcoxon_signed_rank": {
+            "n_nonzero_pairs": 70,
+            "w_positive": 1612.0,
+            "z_score": 2.1628444857750457,
+            "p_value_two_sided": 0.030553142747706312
+          }
+        },
+        "hit_rate": {
+          "hybrid_mean": 0.87,
+          "baseline_mean": 0.73,
+          "mean_difference_hybrid_minus_baseline": 0.14,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.05,
+            0.23
+          ]
+        },
+        "all_query_mean_rank": {
+          "hybrid_mean": 7.8,
+          "baseline_mean": 9.6,
+          "mean_difference_hybrid_minus_baseline": -1.8,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            -3.31,
+            -0.29
+          ]
+        }
+      }
+    },
+    {
+      "cutoff": 10,
+      "baseline": "sentence_transformer",
+      "metrics": {
+        "mrr": {
+          "hybrid_mean": 0.38189285714285715,
+          "baseline_mean": 0.28036904761904763,
+          "mean_difference_hybrid_minus_baseline": 0.10152380952380952,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.06236835317460317,
+            0.1433468253968254
+          ],
+          "paired_wilcoxon_signed_rank": {
+            "n_nonzero_pairs": 46,
+            "w_positive": 977.5,
+            "z_score": 4.777240315977295,
+            "p_value_two_sided": 1.7771733573823262e-06
+          }
+        },
+        "hit_rate": {
+          "hybrid_mean": 0.7,
+          "baseline_mean": 0.62,
+          "mean_difference_hybrid_minus_baseline": 0.08,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.02,
+            0.15
+          ]
+        },
+        "all_query_mean_rank": {
+          "hybrid_mean": 5.72,
+          "baseline_mean": 6.74,
+          "mean_difference_hybrid_minus_baseline": -1.02,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            -1.42,
+            -0.64
+          ]
+        }
+      }
+    },
+    {
+      "cutoff": 20,
+      "baseline": "sentence_transformer",
+      "metrics": {
+        "mrr": {
+          "hybrid_mean": 0.3932235839925468,
+          "baseline_mean": 0.2888711082519132,
+          "mean_difference_hybrid_minus_baseline": 0.10435247574063364,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.06525201920112911,
+            0.14540361569545007
+          ],
+          "paired_wilcoxon_signed_rank": {
+            "n_nonzero_pairs": 60,
+            "w_positive": 1665.5,
+            "z_score": 5.526249622658457,
+            "p_value_two_sided": 3.271485761167001e-08
+          }
+        },
+        "hit_rate": {
+          "hybrid_mean": 0.87,
+          "baseline_mean": 0.75,
+          "mean_difference_hybrid_minus_baseline": 0.12,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            0.06,
+            0.19
+          ]
+        },
+        "all_query_mean_rank": {
+          "hybrid_mean": 7.8,
+          "baseline_mean": 9.87,
+          "mean_difference_hybrid_minus_baseline": -2.07,
+          "paired_percentile_bootstrap_95_percent_ci": [
+            -2.75025,
+            -1.44
+          ]
+        }
+      }
+    }
+  ]
+}
